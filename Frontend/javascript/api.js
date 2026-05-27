@@ -1,7 +1,7 @@
 // Sends message to API and returns response
 export async function sendMessageToAI(message) {
   try {
-    const response = await fetch('http://localhost:8000/chat', {
+    const response = await fetch('https://yamkele-jack-s-portfolio-backend.onrender.com/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message })
