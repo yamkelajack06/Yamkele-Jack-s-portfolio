@@ -273,7 +273,7 @@
         "Cloud sync only activates on Google Sign-In and data migrates automatically from local storage",
         "All environment variables must carry the VITE_ prefix or Firebase and Gemini fail silently in production",
       ],
-      demo: "/study-flow-demo.mp4",
+      demo: "https://streamable.com/i3o10v",
       links: [
         {
           label: "Live ↗",
@@ -325,7 +325,7 @@
         "Duplicate ratings prevented at the database level, not just the application layer",
         "Production images are Cloudinary-hosted so there are no binary blobs on the server",
       ],
-      demo: "/moja-market-demo.mp4",
+      demo: "https://streamable.com/5hmdw6",
       links: [
         {
           label: "Backend ↗",
