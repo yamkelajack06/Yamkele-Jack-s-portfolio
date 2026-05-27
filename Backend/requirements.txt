@@ -1,6 +1,8 @@
-pydantic>=2.7.0
 fastapi==0.115.0
-google-generativeai==0.8.3
-pydantic-settings==2.3.0
-gunicorn
 uvicorn[standard]
+gunicorn
+google-genai
+slowapi
+pydantic>=2.7.0
+pydantic-settings==2.3.0
+python-dotenv
