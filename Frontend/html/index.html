@@ -20,7 +20,10 @@
       href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script src="../javascript/script.js" defer></script>
+    <script type="module" src="../javascript/chat.js" defer></script>
   </head>
   <body>
     <canvas id="particle-canvas"></canvas>
@@ -192,7 +195,7 @@
               <div class="project-img-placeholder">
                 <div class="placeholder-inner">
                   <img
-                    src="/public/study flow.jpeg"
+                    src="../public/study flow.jpeg"
                     alt="screenshot of the study flow application in use"
                   />
                 </div>
@@ -240,7 +243,7 @@
               <div class="project-img-placeholder">
                 <div class="placeholder-inner">
                   <img
-                    src="/public/moja market.jpeg"
+                    src="../public/moja market.jpeg"
                     alt="screenshot of the moja market app in use"
                   />
                 </div>
@@ -285,7 +288,7 @@
               <div class="project-img-placeholder">
                 <div class="placeholder-inner">
                   <img
-                    src="/public/sage.jpeg"
+                    src="../public/sage.jpeg"
                     alt="screenshot of the application in use"
                   />
                 </div>
@@ -525,6 +528,41 @@
       </div>
     </section>
 
-    <script src="script.js"></script>
+    <!-- Chat trigger button -->
+    <button id="chat-open-btn" class="chat-open-btn" aria-label="Chat with AI">
+      Chat with AI
+    </button>
+
+    <!-- Chat view -->
+    <section id="chat-view" style="display: none">
+      <div class="container detail-container">
+        <button id="chat-back-btn" class="back-btn">← Back to Portfolio</button>
+        <div class="chat-page">
+          <div class="chat-page-header">
+            <div class="section-label">ai assistant</div>
+            <h2 class="section-title">
+              Ask me anything<br />about <em>Yamkela.</em>
+            </h2>
+          </div>
+          <div class="chat-messages" id="chat-messages">
+            <div class="message ai-message">
+              Hey, I'm AXIOM AI. Yamkela's personal AI assistant. I can tell you
+              about his background and story, skills and tech stack, projects,
+              career goals, learning journey, or personality and interests. What
+              do you want to know?
+            </div>
+          </div>
+          <form id="chat-form" class="chat-input-area">
+            <input
+              type="text"
+              id="chat-input"
+              placeholder="Type a message..."
+              autocomplete="off"
+            />
+            <button type="submit" id="chat-submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

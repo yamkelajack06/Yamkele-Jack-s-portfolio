@@ -76,7 +76,7 @@ async def chat_endpoint(request: Request, payload: ChatRequest):
             contents=payload.message,
             config=genai.types.GenerateContentConfig(
                 system_instruction=SYSTEM_INSTRUCTION,
-                max_output_tokens=250, # Enforces brief responses and protects quota
+                max_output_tokens=450, # Enforces brief responses
             ),
         )
         return {"response": response.text}

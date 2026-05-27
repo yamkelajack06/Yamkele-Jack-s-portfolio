@@ -29,11 +29,13 @@
       particles.push(createParticle());
     }
   }
+
   function getParticleColor() {
     return html.getAttribute("data-theme") === "light"
-      ? "rgba(180,130,30,"
-      : "rgba(245,166,35,";
+      ? "rgba(8,8,8," // Near-black for light mode (blends nicely)
+      : "rgba(245,166,35,"; // Bright orange for dark mode
   }
+
   function drawParticles() {
     ctx.clearRect(0, 0, W, H);
     const base = getParticleColor();
