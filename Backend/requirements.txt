@@ -3,6 +3,7 @@ uvicorn[standard]
 gunicorn
 google-genai
 slowapi
-pydantic>=2.7.0
+pydantic[email]
 pydantic-settings==2.3.0
 python-dotenv
+email-validator
