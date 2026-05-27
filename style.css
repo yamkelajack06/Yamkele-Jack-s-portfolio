@@ -992,3 +992,18 @@ footer p {
   .hero-cta { flex-direction: column; }
   .detail-title { font-size: 1.7rem; }
 }
+
+.detail-video-wrap {
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.detail-video-wrap video {
+  width: 100%;
+  max-height: 520px;
+  display: block;
+  border-radius: 12px;
+}
