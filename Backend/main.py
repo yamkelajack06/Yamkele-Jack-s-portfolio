@@ -2,11 +2,12 @@ import os
 import json
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 from google import genai
+from contact import send_contact_email
 from dotenv import load_dotenv
 
 # Load Environment Variables
@@ -40,8 +41,13 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
-# Define Pydantic Models for Input Validation
+# Define Pydantic Models
 class ChatRequest(BaseModel):
+    message: str
+
+class ContactForm(BaseModel):
+    name: str
+    email: EmailStr
     message: str
 
 # System Instructions
@@ -84,3 +90,12 @@ async def chat_endpoint(request: Request, payload: ChatRequest):
     except Exception as e:
         print(f"Gemini API Error: {e}")
         raise HTTPException(status_code=500, detail="Failed to communicate with AI service")
+
+@app.post("/send-email")
+@limiter.limit("3/minute")
+async def send_email_endpoint(request: Request, form: ContactForm):
+    success, error = send_contact_email(form.name, form.email, form.message)
+    if not success:
+        raise HTTPException(status_code=500, detail=error)
+    return {"status": "ok", "message": "Email sent"}
+    

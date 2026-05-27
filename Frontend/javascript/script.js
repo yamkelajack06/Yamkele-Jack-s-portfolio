@@ -581,3 +581,58 @@
     });
   });
 })();
+
+const formSubmitBtn = document.querySelector(".form-submit");
+const formFeedback = document.getElementById("form-feedback");
+
+if (formSubmitBtn && formFeedback) {
+  formSubmitBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("contact-name").value.trim();
+    const email = document.getElementById("contact-email").value.trim();
+    const message = document.getElementById("contact-message").value.trim();
+
+    if (!name || !email || !message) {
+      formFeedback.textContent = "All fields are required.";
+      formFeedback.classList.add("show");
+      setTimeout(() => formFeedback.classList.remove("show"), 3000);
+      return;
+    }
+
+    // Disable button while sending
+    formSubmitBtn.disabled = true;
+    formSubmitBtn.textContent = "Sending...";
+
+    try {
+      const response = await fetch("http://localhost:8000/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        formFeedback.textContent = "Message sent! I'll get back to you soon.";
+        formFeedback.style.color = "var(--accent)";
+        // Clear form
+        document.getElementById("contact-name").value = "";
+        document.getElementById("contact-email").value = "";
+        document.getElementById("contact-message").value = "";
+      } else {
+        formFeedback.textContent = data.detail || "Failed to send. Please try again.";
+        formFeedback.style.color = "#ff6b6b";
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
+      formFeedback.textContent = "Network error. Make sure backend is running on port 8000.";
+      formFeedback.style.color = "#ff6b6b";
+    } finally {
+      formSubmitBtn.disabled = false;
+      formSubmitBtn.textContent = "Send it";
+      formFeedback.classList.add("show");
+      setTimeout(() => formFeedback.classList.remove("show"), 5000);
+    }
+  });
+}
