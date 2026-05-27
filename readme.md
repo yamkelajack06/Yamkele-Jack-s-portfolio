@@ -16,8 +16,8 @@ Personal portfolio website built by Yamkela Jack, a Computer Science student at 
 - python-dotenv, slowapi (rate limiting)  
 
 **Deployment**  
-- Frontend: Vercel  
-- Backend: Render  
+- Frontend: Vercel , Live URL: https://yamkele-jack-s-portfolio.vercel.app/
+- Backend: Render, Live URL: https://yamkele-jack-s-portfolio-backend.onrender.com 
 
 ## Features
 
