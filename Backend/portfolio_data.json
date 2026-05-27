@@ -1,0 +1,153 @@
+{
+  "personal_info": {
+    "name": "Yamkela Jack",
+    "bio": "Computer Science student at Wits University (Expected Dec 2027). Full stack developer building scalable web and mobile applications.",
+    "location": "Johannesburg, South Africa",
+    "background": "Originally from the small town of Engcobo in the Eastern Cape. I moved to Mthatha at 12 to attend Umtata High School—some of the best times of my life—before relocating to JHB for university.",
+    "availability": "Open to internships, collaborations, and interesting problems.",
+    "career_goals": "Targeting backend-focused internship roles, specifically those involving AI integrations, workflow automation, or the fintech space. Open to continuous growth and expansion within the broader software development industry.",
+    "coding_philosophy": "I build software to solve actual problems. I care deeply about the craft at every layer, from database schema to deployed UI.",
+    "learning_path": "Self-taught software development via The Odin Project. Learned database fundamentals formally at university, and picked up FastAPI strictly through hands-on building.",
+    "coding_quirks": "My main environment is VS Code (Tokyo Night dark theme) because it fits my stack, though I've used Android Studio for Mobile Computing and Visual Studio (C#) for Information Systems. Fueled entirely by energy drinks and dark, strong coffee.",
+    "personality_and_interests": {
+      "hobbies": "Producing hip-hop and trap beats (Pvlace is my favorite trap producer), gaming (WWE 2K, eFootball, CODM), and listening to a wide range of music from RnB, afrobeat, and house to classical. J. Cole is my favorite rapper, and Adele is my favorite singer.",
+      "sports": "Die-hard Culer. Visca Barça!",
+      "favorite_shows": "Not a huge anime fan, but I mess with Dragon Ball heavy—it's my favorite show. Also a big fan of Adventure Time.",
+      "tech_diet": "I actively follow Levi Okoye, Sarah Li, and Tech with Tim.",
+      "favorite_stack": "FastAPI and PostgreSQL.",
+      "origin_story": "My passion for tech started young—I was the family's technical wizard, always the one called to fix the TV or troubleshoot phones. But I truly fell in love with development in Grade 11. As an RCL, I attended the 4IR Youth Expo on June 16, 2022, at St. John's College in Mthatha (an event keynoted by President Ramaphosa). Seeing a simple traffic simulation controlled live by code blew my mind, and I've been hooked ever since.",
+      "fun_fact": "I got into Computer Science because of Gilfoyle from Silicon Valley. I respected his cold, nonchalant vibe, his deadpan humor, and the fact that he was completely self-taught. Plus, building a custom server rack and naming it 'Anton' made him legendary. That’s the exact energy that inspired me to start coding."
+    }
+  },
+  "skills": {
+    "frontend": ["HTML", "CSS", "JavaScript", "TypeScript", "React"],
+    "backend": ["Python", "FastAPI", "PHP", "PostgreSQL", "Firebase"],
+    "tools": ["Vercel", "Render", "Docker", "Postman", "Database Design"],
+    "coursework": ["Database Fundamentals", "Information Systems", "Mobile Computing", "Data Structures & Algorithms", "Multivariable Calculus", "Linear Algebra"]
+  },
+  "learning_journey": [
+    "Exploring LangChain for AI agent orchestration",
+    "Building proof-of-concept agents with Gemini + LangChain",
+    "Containerizing FastAPI + PostgreSQL apps with Docker Compose",
+    "Studying AWS IAM roles, policies, and Lambda functions for Developer Associate prep"
+  ],
+  "future_goals": [
+    "Deploy a LangChain-powered agent to production",
+    "Pass AWS Developer Associate certification by end of 2026",
+    "Experiment with multi-agent systems for workflow automation"
+  ],
+  "projects": {
+    "study_flow": {
+      "title": "Study Flow",
+      "tag": "Solo · 2025",
+      "subtitle": "AI-powered student timetable SPA",
+      "stack": ["React 18", "Vite", "React Router v6", "Firebase Auth", "Cloud Firestore", "Gemini 2.5 Flash Lite", "html2canvas", "jsPDF", "Lucide React"],
+      "why_built": "I was frustrated planning my schedule on paper. Most decent calendar apps lock the good stuff behind a subscription and as a student that felt backwards. So I built my own. Study Flow started as a \"let me just solve my own problem\" project, but it became the most technically challenging thing I've shipped. It features real-time conflict detection, a full auth and cloud sync layer, AI integration with context awareness, and a PDF export engine. Every feature had to earn its place.",
+      "what_it_does": "A smart single-page application that lets students build and manage their weekly timetable. You can do it manually through a clean UI or by describing your week to an AI assistant in plain English. It works offline without an account and syncs to the cloud the moment you sign in.",
+      "features": [
+        "Three timetable views: Weekly grid, Daily breakdown, and Monthly calendar",
+        "One-time and recurring entries for lectures, labs, study blocks, and deadlines",
+        "Smart conflict detection where the app blocks overlapping entries at the UI level and the AI validates against your schedule",
+        "Colour-coded categories with a custom colour picker per entry",
+        "AI Assistant powered by Gemini 2.5 Flash Lite featuring natural language commands",
+        "Local-first persistence providing full functionality without an account via localStorage",
+        "PDF export for a print-optimised weekly timetable"
+      ],
+      "rules": [
+        "Conflict detection runs both in the UI and inside the AI before any entry is written",
+        "Cloud sync only activates on Google Sign-In and data migrates automatically from local storage"
+      ]
+    },
+    "moja_market": {
+      "title": "Moja Market",
+      "tag": "Team · 2026",
+      "subtitle": "Campus peer-to-peer marketplace",
+      "stack": ["PHP 8.2", "Apache", "PostgreSQL", "Docker", "Cloudinary", "Render", "Java", "Android SDK", "OkHttp", "Material Design", "ViewPager2", "RecyclerView"],
+      "why_built": "This was a university group project for Database Fundamentals and Mobile Computing. I designed and built the entire backend including the PHP REST API, the PostgreSQL schema, and the Docker deployment pipeline. It was the first time I shipped a live production API serving a real Android app.",
+      "what_it_does": "A peer-to-peer marketplace Android app built for university students to buy, sell, and post item requests within their campus community.",
+      "features": [
+        "Secure registration and login with bcrypt password hashing",
+        "Full CRUD for marketplace listings allowing multiple images per listing",
+        "Want Requests feed where buyers post item requests",
+        "Ratings system with 1 to 5 star ratings showing average and total count",
+        "Dual-mode image upload directly to Cloudinary",
+        "Fully normalised PostgreSQL schema across users, items, images, want requests, and ratings tables"
+      ],
+      "rules": [
+        "Parameterised queries used on every single endpoint so SQL injection is structurally impossible",
+        "Duplicate ratings prevented at the database level",
+        "Production images are Cloudinary-hosted so there are no binary blobs on the server"
+      ]
+    },
+    "mails": {
+      "title": "Mails",
+      "tag": "SaaS · In Development",
+      "subtitle": "AI Gmail automation tool",
+      "stack": ["Gmail API", "Gemini AI", "OAuth 2.0", "PostgreSQL", "Typescript", "React", "CSS"],
+      "why_built": "I want to understand AI product architecture end to end, not just calling an API but designing the full loop: fetch, classify, act, review, digest. Mails is where I'm learning to build a system that runs autonomously without losing user trust.",
+      "what_it_does": "A personal Gmail automation tool that classifies, cleans, and prioritises inbox activity using Gemini AI.",
+      "features": [
+        "Gmail OAuth 2.0 connection featuring a custom auth flow",
+        "AI classification into Finance, Promotions, Social, University, and custom user-defined categories",
+        "Automatic Gmail label creation and application",
+        "Cleaning automation where promotions older than 7 days and newsletters older than 14 days are archived",
+        "Dry-run mode letting you preview every proposed action before it executes",
+        "Daily AI-generated digest of high-priority emails"
+      ],
+      "rules": [
+        "Confidence below 0.7 triggers a flag for manual review and is never auto-actioned",
+        "User rules always override AI output",
+        "Only verified accounts can access the dashboard"
+      ],
+      "future_features": [
+        "Trash functionality in v2",
+        "Multiple Gmail account support",
+        "Personalised category models over time"
+      ]
+    },
+    "cinelog": {
+      "title": "CineLog",
+      "tag": "App · In Development",
+      "subtitle": "Personal movie & TV show tracker",
+      "stack": ["REST API", "TMDB API", "Custom Auth", "SQLite"],
+      "why_built": "I watch a lot of content and I've lost count of how many times I've started something I've already seen. Letterboxd exists but I want to build my own to go deep on the architecture decisions that a real content tracking product requires.",
+      "what_it_does": "A personal movie and TV show tracking web app where you search TMDB for content, build a private watchlist, log watches with a date, leave a rating and review, and see stats about your viewing habits.",
+      "features": [
+        "Custom auth letting you register with username, email, and password",
+        "TMDB-powered search where title search returns poster, release year, and overview",
+        "Watch logging to mark as watched, auto-record the date, add a 1 to 10 rating, and an optional review",
+        "Stats dashboard displaying total watched count, average rating, most watched genre, and recent watch history",
+        "Frequently accessed TMDB data is cached locally"
+      ],
+      "rules": [
+        "One entry per movie per user with no duplicates allowed",
+        "Only watched items can be rated",
+        "Users can only read and write their own data"
+      ],
+      "future_features": [
+        "Public profiles, follows, activity feed",
+        "Recommendations logic + ML",
+        "Total watch time, streaks, rating distribution"
+      ]
+    },
+    "sage": {
+      "title": "SAGE E-Commerce",
+      "tag": "Solo · 2025",
+      "subtitle": "The Odin Project — React fundamentals",
+      "stack": ["React", "React Router DOM", "FakeStore API", "localStorage API", "Vanilla CSS", "React Testing Library"],
+      "why_built": "A structured learning project from The Odin Project curriculum. SAGE was where I worked through those fundamentals deliberately, not just making it work but understanding why the patterns exist.",
+      "what_it_does": "A multi-page React SPA shopping experience built using the FakeStore API.",
+      "features": [
+        "Home page, Shop page, Cart page, and a simulated Checkout page",
+        "Products fetched dynamically from the FakeStore API via useEffect",
+        "Real-time cart item count in the navigation bar across all pages",
+        "Cart persistence across sessions via the localStorage API"
+      ]
+    }
+  },
+  "contact": {
+    "email": "yamkelajack06@gmail.com",
+    "github": "https://github.com/yamkelajack06",
+    "linkedin": "https://www.linkedin.com/in/yamkela-jack-318939298"
+  }
+}

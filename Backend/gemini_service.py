@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
-# Load your portfolio data
+# Load portfolio data
 with open("portfolio_data.json", "r") as file:
     portfolio_data = json.load(file)
 
