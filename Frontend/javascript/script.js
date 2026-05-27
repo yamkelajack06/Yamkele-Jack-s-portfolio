@@ -273,7 +273,7 @@
         "Cloud sync only activates on Google Sign-In and data migrates automatically from local storage",
         "All environment variables must carry the VITE_ prefix or Firebase and Gemini fail silently in production",
       ],
-      demo: "https://streamable.com/i3o10v",
+      demo: "https://streamable.com/e/i3o10v",
       links: [
         {
           label: "Live ↗",
@@ -325,7 +325,7 @@
         "Duplicate ratings prevented at the database level, not just the application layer",
         "Production images are Cloudinary-hosted so there are no binary blobs on the server",
       ],
-      demo: "https://streamable.com/5hmdw6",
+      demo: "https://streamable.com/e/5hmdw6",
       links: [
         {
           label: "Backend ↗",
@@ -494,15 +494,17 @@
 
     const demoBlock = data.demo
       ? `
-  <div class="detail-section">
-    <div class="detail-section-title">Demo</div>
-    <div class="detail-video-wrap">
-      <video controls preload="metadata">
-        <source src="${data.demo}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <div class="detail-section">
+      <div class="detail-section-title">Demo</div>
+        <div class="detail-video-wrap">
+        <iframe
+        src="${data.demo}"
+        frameborder="0"
+        allowfullscreen
+        style="width:100%;aspect-ratio:16/9;border-radius:12px;border:none;">
+      </iframe>
     </div>
-  </div>
+    </div>
 `
       : "";
     return `
@@ -605,11 +607,14 @@ if (formSubmitBtn && formFeedback) {
     formSubmitBtn.textContent = "Sending...";
 
     try {
-      const response = await fetch("https://yamkele-jack-s-portfolio-backend.onrender.com/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message })
-      });
+      const response = await fetch(
+        "https://yamkele-jack-s-portfolio-backend.onrender.com/send-email",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, message }),
+        },
+      );
 
       const data = await response.json();
 
@@ -621,12 +626,14 @@ if (formSubmitBtn && formFeedback) {
         document.getElementById("contact-email").value = "";
         document.getElementById("contact-message").value = "";
       } else {
-        formFeedback.textContent = data.detail || "Failed to send. Please try again.";
+        formFeedback.textContent =
+          data.detail || "Failed to send. Please try again.";
         formFeedback.style.color = "#ff6b6b";
       }
     } catch (error) {
       console.error("Fetch error:", error);
-      formFeedback.textContent = "Network error. Make sure backend is running on port 8000.";
+      formFeedback.textContent =
+        "Network error. Make sure backend is running on port 8000.";
       formFeedback.style.color = "#ff6b6b";
     } finally {
       formSubmitBtn.disabled = false;
@@ -636,3 +643,5 @@ if (formSubmitBtn && formFeedback) {
     }
   });
 }
+
+lucide.createIcons();
