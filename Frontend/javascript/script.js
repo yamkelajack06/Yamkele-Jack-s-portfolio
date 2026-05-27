@@ -605,7 +605,7 @@ if (formSubmitBtn && formFeedback) {
     formSubmitBtn.textContent = "Sending...";
 
     try {
-      const response = await fetch("http://localhost:8000/send-email", {
+      const response = await fetch("https://yamkele-jack-s-portfolio-backend.onrender.com/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message })
